@@ -121,4 +121,36 @@ html,body,:root{
     @apply bg-background text-foreground;
   }
 }
+.shiny-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #c59b64 30%, #e9d7b9 50%, #c59b64 70%);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 5s ease-in-out infinite;
+  font-weight: 800;
+}
+
+/* Softer shimmer movement */
+@keyframes shimmer {
+  0% {
+    background-position: -150%;
+  }
+  100% {
+    background-position: 150%;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
