@@ -1,6 +1,5 @@
 "use client";
 
-// shadcn ui
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,7 +13,6 @@ import { Separator } from "@/components/ui/separator";
 
 import Link from "next/link";
 
-// react icons
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
@@ -39,7 +37,7 @@ const SignIn = () => {
       password,
     });
     if (res?.ok) {
-      router.push("/");
+      router.push("/main");
       toast.success("login successful");
     } else if (res?.status === 401) {
       setError("Invalid Credentials");

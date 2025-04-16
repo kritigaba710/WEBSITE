@@ -9,7 +9,8 @@ export default function MainDashboard() {
   const { data: session, status } = useSession();
 
   if (status === "loading") return <div>Loading...</div>;
-  if (!session) return <div>Please sign in to access this page.</div>;
+  if (!session){
+    router.push("/sign-up");};
 
   return (
     <main className="min-h-screen bg-gradient-to-br pt-5 from-[#ddb27b] via-[#c29073] to-[#dfb288]">
