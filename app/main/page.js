@@ -1,36 +1,35 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function MainDashboard() {
   const router = useRouter();
   const { data: session, status } = useSession();
-  const [isClient, setIsClient] = useState(false);
 
+  // Loading state
+  if (status === "loading") return <div>Loading...</div>;
+
+  // Redirect to sign-up if no session is available
   useEffect(() => {
-    setIsClient(true);
-    if (status === "unauthenticated") {
-      router.push("app/sign-up/page.js");
+    if (!session) {
+      router.push("/sign-up");
     }
-  }, [status, router]);
-
-  if (status === "loading" || !isClient) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
-  }
-
-  if (!session?.user) {
-    return <div>No user found. Redirecting...</div>;
-  }
+  }, [session, router]); // Only run when session changes
 
   return (
     <main className="min-h-screen bg-gradient-to-br pt-5 from-[#ddb27b] via-[#c29073] to-[#dfb288]">
       <Navbar />
-      <div className="mt-8 mx-4 rounded-4xl font-bold mb-6 text-center shadow-lg overflow-hidden relative h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[45vh] p-8 sm:pt-12 md:p-20 lg:p-24 text-3xl sm:text-4xl md:text-6xl lg:text-7xl bg-[url('public/mainbg.jpg')] bg-cover bg-center bg-no-repeat">
+      <div className="mt-8 mx-4 rounded-4xl font-bold mb-6 text-center shadow-lg overflow-hidden relative 
+        h-[30vh] sm:h-[35vh] md:h-[40vh] lg:h-[45vh] 
+        p-8 sm:pt-12 md:p-20 lg:p-24 
+        text-3xl sm:text-4xl md:text-6xl lg:text-7xl
+        bg-[url('/mainbg.jpg')] bg-cover bg-center bg-no-repeat">
+        
         <span className="shiny-text block w-full my-auto text-white drop-shadow-md">
-          Welcome, {session.user?.name}!
+          Welcome, {session?.user?.name}!
         </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 mx-3 gap-6">
@@ -43,7 +42,7 @@ export default function MainDashboard() {
           <h2 className="font-bold text-4xl mb-4">💧 Water Tracker</h2>
           <p className="text-lg font-semibold">Track your daily hydration goal and glasses consumed.</p>
           <button
-            onClick={() => router.push("app/water/page.js")}
+            onClick={() => router.push("/water")}
             className="mt-4 cursor-pointer bg-blue-500 text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             Go to Water Page
@@ -58,7 +57,7 @@ export default function MainDashboard() {
           <h2 className="text-4xl font-bold mb-4">🏋️ Workouts</h2>
           <p className="text-lg font-semibold">Log workouts, learn new ones, and track calories burned & eaten.</p>
           <button
-            onClick={() => router.push("app/workout/page.js")}
+            onClick={() => router.push("/workout")}
             className="mt-4 cursor-pointer text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             Go to Workout Page
