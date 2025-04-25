@@ -8,6 +8,7 @@ import { useEffect } from "react";
 export default function MainDashboard() {
   const router = useRouter();
   const { data: session, status } = useSession();
+  const [isSessionLoaded, setIsSessionLoaded] = useState(false);
 
   useEffect(() => {
     if (status === "loading") return;
