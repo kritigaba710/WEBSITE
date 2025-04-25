@@ -11,13 +11,20 @@ export default function MainDashboard() {
 
   useEffect(() => {
     if (status === "loading") return;
+
     if (!session) {
-      router.push("/sign-up");
+      router.push("/sign-up"); 
     }
+
+    setIsSessionLoaded(true); 
   }, [session, status, router]);
 
-  if (status === "loading") {
+  if (status === "loading" || !isSessionLoaded) {
     return <div>Loading...</div>;
+  }
+
+  if (!session?.user) {
+    return <div>No user found. Redirecting...</div>; 
   }
   return (
     <main className="min-h-screen bg-gradient-to-br pt-5 from-[#ddb27b] via-[#c29073] to-[#dfb288]">
