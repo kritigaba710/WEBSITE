@@ -1,8 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useSession,useEffect } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function MainDashboard() {
   const router = useRouter();
