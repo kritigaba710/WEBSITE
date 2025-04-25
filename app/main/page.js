@@ -29,7 +29,7 @@ export default function MainDashboard() {
   bg-[url('/mainbg.jpg')] bg-cover bg-center bg-no-repeat">
   
   <span className="shiny-text block w-full my-auto text-white drop-shadow-md">
-    Welcome, {session.user.name}!
+    Welcome, {session.user?.name}!
   </span>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-3 mx-3 gap-6">
