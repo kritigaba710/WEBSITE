@@ -10,11 +10,15 @@ export default function MainDashboard() {
   const { data: session, status } = useSession();
 
   useEffect(() => {
+    if (status === "loading") return;
     if (!session) {
       router.push("/sign-up");
     }
-  }, [session, router]);
-  if (status === "loading") {return <div>Loading...</div>};
+  }, [session, status, router]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
   return (
     <main className="min-h-screen bg-gradient-to-br pt-5 from-[#ddb27b] via-[#c29073] to-[#dfb288]">
         <Navbar/>
