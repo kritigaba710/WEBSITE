@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 
 export default function MainDashboard() {
   const router = useRouter();
