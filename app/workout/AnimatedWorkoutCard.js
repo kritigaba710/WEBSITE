@@ -15,7 +15,7 @@ const AnimatedWorkoutCard = ({ workout, index, isSelected, onSelect }) => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       onClick={() => onSelect(workout)}
       className={`card flex justify-between gap-10 items-center flex-wrap p-10 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transition-all ${
-        isSelected ? 'ring-2 ring-blue-500' : ''
+        isSelected ? 'ring-2 ring-gray-300' : ''
       }`}
     >
       <div className="flex-1 min-w-[250px]">

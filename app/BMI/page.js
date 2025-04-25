@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
+import Navbar from '@/components/navbar';
 const BMICalculator = () => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
@@ -114,7 +114,8 @@ const BMICalculator = () => {
         className="absolute inset-0 bg-cover bg-center blur-sm"
         style={{ backgroundImage: "url('/bmi.jpg')" }}
       ></div>
-    <Card className="max-w-xl relative z-10 mx-auto bg-amber-50 p-6 shadow-xl mt-36 rounded-2xl">
+      <Navbar/>
+    <Card className="max-w-xl mx-4 relative z-10 md:mx-auto bg-amber-50 p-6 shadow-xl mt-36 rounded-2xl">
       <CardHeader>
         <CardTitle className="text-3xl text-center flex items-center justify-center "><span className='bg-gradient-to-r from-gray-800 via-slate-500 to-gray-600 inline-block text-transparent bg-clip-text'>BMI Calculator </span><span className='text-3xl'>{'\u{1F4D0}'}</span></CardTitle>
       </CardHeader>

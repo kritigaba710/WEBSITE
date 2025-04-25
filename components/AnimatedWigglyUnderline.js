@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 export default function AnimatedUnderline() {
   const [offset, setOffset] = useState(0);
 
-  // Move gradient from left to right
   useEffect(() => {
     const interval = setInterval(() => {
       setOffset((prev) => (prev + 1) % 100);

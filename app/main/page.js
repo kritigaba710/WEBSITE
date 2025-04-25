@@ -21,7 +21,7 @@ export default function MainDashboard() {
   text-3xl sm:text-4xl md:text-6xl lg:text-7xl
   bg-[url('/mainbg.jpg')] bg-cover bg-center bg-no-repeat">
   
-  <span className="shiny-text block w-full text-white drop-shadow-md">
+  <span className="shiny-text block w-full my-auto text-white drop-shadow-md">
     Welcome, {session.user.name}!
   </span>
 </div>

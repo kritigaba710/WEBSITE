@@ -1,13 +1,13 @@
 import connectToDatabase from '@/lib/mongodb';
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route"; // adjust path!
+import { authOptions } from "../auth/[...nextauth]/route"; 
 import User from "@/models/user";
 
 
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
-  const { action, workoutData, email } = await req.json(); // Ensure you read the body as JSON
+  const { action, workoutData, email } = await req.json(); 
 
   if (!action || !email || !workoutData) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -55,7 +55,7 @@ await User.updateOne(
   }
 );
 
-// If no existing entry for today, push a new one:
+
 await User.updateOne(
   { email, "progress.date": { $ne: today } },
   {
@@ -80,7 +80,7 @@ await User.updateOne(
 }
 
 export async function GET(req) {
-    const email = req.nextUrl.searchParams.get("email"); // updated way to get search param
+    const email = req.nextUrl.searchParams.get("email"); 
   
     if (!email) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });

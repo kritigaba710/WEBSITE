@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import connectToDatabase from "@/lib/mongodb";
 import User from "@/models/user";
 
-// ✅ PATCH: Update daily water goal
 export async function PATCH(req) {
   const { email, goal } = await req.json();
   await connectToDatabase();
@@ -18,7 +17,6 @@ export async function PATCH(req) {
   return NextResponse.json({ message: "Daily goal updated!" });
 }
 
-// ✅ PUT: Log today's water intake
 export async function PUT(req) {
   const { email, glasses } = await req.json();
   const date = new Date().toISOString().split('T')[0];;
@@ -43,7 +41,6 @@ export async function PUT(req) {
   return NextResponse.json({ message: "Water intake logged!" });
 }
 
-// ✅ GET: Fetch hydration logs and goal
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const email = searchParams.get("email");

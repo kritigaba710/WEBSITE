@@ -7,7 +7,7 @@ import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
   return (
-    <div className="bg-[#CEC093] p-2">
+    <div className="bg-[#CEC093] overflow-hidden p-2">
         <Navbar/>
         <Hero/>
         <Caloriecard/>

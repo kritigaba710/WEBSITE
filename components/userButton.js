@@ -35,7 +35,7 @@ const UserButton = () => {
                 <DropdownMenu>
                     <DropdownMenuTrigger className="outline-none">
                         <div className="flex items-center gap-2 sm:gap-3 cursor-pointer">
-                            <span className="hidden sm:block text-sm font-medium text-[#333] dark:text-white">
+                            <span className="block text-sm font-medium text-[#333] dark:text-white">
                                 {session.user?.name}
                             </span>
                             <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
@@ -63,7 +63,7 @@ const UserButton = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
             ) : (
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto items-end sm:items-center">
+                <div className="flex flex-row gap-2 sm:gap-4 w-full sm:w-auto items-end sm:items-center">
                     <Link href="/sign-in" className="w-full sm:w-auto">
                         <Button
                             variant="outline"
