@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Health & Fitness Tracker
 
-## Getting Started
+A Health and Fitness Tracker built with **Next.js**, **React**, and **MongoDB**. This app allows users to track their hydration, workouts, and progress, while also providing workout recommendations and diet tracking.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Water Tracker**: 
+  - Log daily water intake and set hydration goals.
+  - Progress bar for hydration.
+  - Edit and delete options for hydration logs.
+  - Hydration chart showing intake over the last 7 days.
+  - Restriction to one log per day (update instead of adding multiple logs).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Workout Library**: 
+  - View workouts categorized by difficulty (beginner, intermediate, advanced).
+  - Filter workouts by goal (strength, cardio, etc.).
+  - Timer/Rep tracker for workouts.
+  - Track calories burned during workouts.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Progress Tracker**: 
+  - View your progress based on hydration and workout data with graphs and analytics.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Analytics**: 
+  - Weekly/Monthly analytics to track:
+    - Water intake.
+    - Workouts performed.
+    - Calories burned.
+    - Diet intake (based on logged meals).
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Backend**: Node.js, Express.js (via API routes in Next.js)
+- **Database**: MongoDB
+- **Authentication**: NextAuth (GitHub & Credentials)
+- **Styling**: Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Node.js (version >= 14)
+- MongoDB account (for connecting to your MongoDB database)
