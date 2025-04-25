@@ -13,7 +13,7 @@ export default function MainDashboard() {
   useEffect(() => {
     setIsClient(true);
     if (status === "unauthenticated") {
-      router.push("/sign-up");
+      router.push("app/sign-up/page.js");
     }
   }, [status, router]);
 
