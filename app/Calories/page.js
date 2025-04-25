@@ -74,7 +74,7 @@ export default function CaloriesCalculator() {
   animate={{
     opacity: 1,
     scale: 1,
-    y: [0, -10, 0, 10, 0], // floating effect
+    y: [0, -10, 0, 10, 0], 
   }}
   transition={{
     duration: 4,
