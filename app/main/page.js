@@ -9,9 +9,11 @@ export default function MainDashboard() {
   const { data: session, status } = useSession();
 
   if (status === "loading") return <div>Loading...</div>;
-  if (!session){
-    router.push("/sign-up");};
-
+  useEffect(() => {
+    if (!session) {
+      router.push("/sign-up");
+    }
+  }, [session, router]);
   return (
     <main className="min-h-screen bg-gradient-to-br pt-5 from-[#ddb27b] via-[#c29073] to-[#dfb288]">
         <Navbar/>
@@ -26,7 +28,6 @@ export default function MainDashboard() {
   </span>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-3 mx-3 gap-6">
-      
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,7 +40,6 @@ export default function MainDashboard() {
           Go to Water Page
         </button>
       </motion.section>
-
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,6 @@ export default function MainDashboard() {
           Go to Workout Page
         </button>
       </motion.section>
-
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
