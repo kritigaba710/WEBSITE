@@ -9,15 +9,13 @@ export default function MainDashboard() {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  // Loading state
-  if (status === "loading") return <div>Loading...</div>;
-
-  // Redirect to sign-up if no session is available
   useEffect(() => {
     if (!session) {
       router.push("/sign-up");
     }
-  }, [session, router]); // Only run when session changes
+  }, [session, router]); 
+  if (status === "loading") return <div>Loading...</div>;
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br pt-5 from-[#ddb27b] via-[#c29073] to-[#dfb288]">
