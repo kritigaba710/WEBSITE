@@ -19,7 +19,7 @@ const ProfileCard = () => {
                     Dive Deeper
                 </div>
                 <div className='text-xl sm:text-2xl md:text-3xl font-bold text-[#4f4a36cc]'>
-                    Maybe you'd want to start tracking your progress
+                    Maybe you&apos;d want to start tracking your progress
                 </div>
                 <div className='text-lg sm:text-xl md:text-2xl font-semibold text-[#4f4a36cc]'>
                     Explore more features with us

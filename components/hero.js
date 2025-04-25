@@ -111,7 +111,7 @@ const Hero = () => {
       {/* Main Text */}
       <div className="pt-[20vh] sm:pt-[25vh] flex flex-col gap-4 text-center z-10 relative max-w-4xl mx-auto px-2">
         <FloatingBubbleText className="text-xl sm:text-2xl md:text-4xl font-bold">
-          LET'S START TAKING CARE OF YOUR
+          LET&apos;S START TAKING CARE OF YOUR
         </FloatingBubbleText>
         <FloatingBubbleText className="text-3xl sm:text-5xl md:text-7xl font-bold font-serif">
           HEALTH & FITNESS
